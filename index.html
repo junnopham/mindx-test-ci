@@ -1,0 +1,21 @@
+<html>
+    <body id="back">
+        <input type="text" id="name"/>
+        <button id="copy" onclick="copy()">Copy</button>
+        <input type="color" id="color"/>
+        <script>
+            let color = document.getElementById("color")
+            let text = document.getElementById("name")
+            let back = document.getElementById("back")
+            color.addEventListener("change", (event) => {
+                text.value = color.value
+                back.style.background = color.value
+            }, false)
+
+            function copy() {
+                text.select()
+                document.execCommand("copy")
+            }
+        </script>
+    </body>
+</html>
